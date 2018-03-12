@@ -1,0 +1,10 @@
+{
+  "serviceType": "avid.tutorial.java.service",
+  "serviceRealm": "global",
+  "serviceVersion": 3,
+  "op": "submitJob",
+  "paramSet": {
+      "jobId": -1,
+      "execTime": 1000
+  }
+}

@@ -1,0 +1,30 @@
+
+
+apply plugin: 'java'
+
+apply from: "${projectDir}/versions.gradle"
+apply plugin: 'application'
+
+group = 'com.avid.connector.tutorial'
+version = '0.0.1-SNAPSHOT'
+applicationName = 'java-service'
+
+repositories {
+	mavenCentral()
+
+	flatDir {
+		dirs 'libs'
+	}
+}
+
+dependencies {
+	compile fileTree(dir: 'libs', include: '*.jar')
+
+	compile group: 'ch.qos.logback', name: 'logback-core', version: "${logbackVersion}"
+	compile group: 'ch.qos.logback', name: 'logback-classic', version: "${logbackVersion}"
+
+	compile group: 'com.google.code.findbugs', name: 'jsr305', version: "${jsr305}"
+
+}
+
+mainClassName = 'com.avid.connector.tutorial.JavaServiceMain'
